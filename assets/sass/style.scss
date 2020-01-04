@@ -5,7 +5,8 @@
 @import "../../node_modules/bootstrap/scss/_variables.scss";
 
 $theme-colors:(
-  "primary": #00A6B8
+  "primary": #00A6B8,
+  "purple": rgb(58, 24, 146)
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
