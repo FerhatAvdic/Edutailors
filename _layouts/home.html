@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-lg-6 mb-5">
+          {% capture about %}{% include about.md %}{% endcapture %}
+          {{about | markdownify}}
+        </div>
+        <div class="col-lg-6 mb-5 ">
+          <img src="/assets/selfiecollage.png" alt="selfiecollage" class="img-fluid">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 mb-5">
+          {% capture terms %}{% include terms.md %}{% endcapture %}
+          <div class="terms">
+            {{ terms | markdownify}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

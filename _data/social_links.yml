@@ -1,0 +1,7 @@
+---
+  - icon: '<i class="fab fa-facebook-square"></i>'
+    url: "http://www.facebook.com"
+  - icon: '<i class="fab fa-twitter-square"></i>'
+    url: "http://www.twitter.com"
+  - icon: '<i class="fab fa-instagram"></i>'
+    url: "http://www.instagram.com"
