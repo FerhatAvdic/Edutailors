@@ -2,7 +2,7 @@
 
 ##### A tailor is someone who believes that personalized learning should be affordable, accessible and effective for everyone. 
 
-Whether you're a student or a tutor - using Edutailors'this semester, or not - if you believe what we believe, take a selfie and post it on your Instagram account, Twitter or Facebook with #tailorlikeme. Every week we'll randomly select two winners and give away two $100 tangocard_corn gift cards to a lucky instructor and student. Why? Because you deserve it! 
+Whether you're a student or a tutor - using Edutailors'this semester, or not - if you believe what we believe, take a selfie and post it on your Instagram account, Twitter or Facebook with #tailorlikeme. At the end of the month we will randomly select 2 winner and give away €50 to a lucky tutor and student. Why? Because you deserve it! 
 
 **HOW TO ENTER**
 - Take a selfie. (Already have a tailor shirt? Wear it!) 
