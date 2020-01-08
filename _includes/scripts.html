@@ -1,0 +1,54 @@
+<script>
+
+let email = document.getElementById("email");
+let type = document.getElementById("type");
+let nameList = document.getElementById("name-list");
+let acceptTerms = document.getElementById("accept-terms");
+let submitBtn = document.getElementById("btn-submit");
+
+submitBtn.addEventListener("click", submit);
+
+function submit(){
+  event.preventDefault();
+  let formData = {
+    email: email.value,
+    type: type.value,
+    nameList: nameList.value,
+    acceptTerms: acceptTerms.checked
+  }
+  console.log(formData);
+  if(validateForm(formData)){
+    fetch('https://edutailors-backend-production.herokuapp.com/api', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        alert('Email has been sent');
+      })
+      .catch((error) => {
+        alert('Something went wrong, please try again later.');
+      });
+  }
+  else alert('Form is invalid, please check the fields.');
+}
+
+function validateForm(formData){
+  if (!validateEmail(formData.email) ||
+  formData.type === "" ||
+  formData.nameList === "" ||
+  !formData.acceptTerms  )
+    return false;
+  else
+    return true;
+}
+
+  function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+</script>

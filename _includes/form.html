@@ -1,4 +1,4 @@
-<form>
+<form id="email-form">
   <div class="form-group">
     <label for="email">Email*</label>
     <input type="email" class="form-control" id="email" required>
@@ -12,15 +12,15 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="instagram-names">Instagram name(s) where post was shared:*</label>
-    <textarea class="form-control" id="instagram-names" rows="3" required></textarea>
+    <label for="name-list">Instagram name(s) where post was shared:*</label>
+    <textarea class="form-control" id="name-list" rows="3" required></textarea>
   </div>
   <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="accept-terms" required>
+    <input type="checkbox" class="form-check-input" id="accept-terms" value="checked" required>
     <label class="form-check-label" for="accept-terms">I Accept the Terms and Conditions*</label>
   </div>
   <div class="form-group text-purple">All fields with an asterisk (*) sign are required.</div>
   <div class="form-group">
-    <button type="submit" class="btn btn-purple btn-block">Submit</button>
+    <button id="btn-submit" type="submit" class="btn btn-purple btn-block">Submit</button>
   </div>
 </form>
