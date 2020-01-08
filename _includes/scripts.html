@@ -1,4 +1,6 @@
 <script>
+(function(){
+
 
 let email = document.getElementById("email");
 let type = document.getElementById("type");
@@ -6,9 +8,28 @@ let nameList = document.getElementById("name-list");
 let acceptTerms = document.getElementById("accept-terms");
 let submitBtn = document.getElementById("btn-submit");
 
+let errorAlert = document.getElementById("form-error");
+let errorText = document.getElementById("form-error-text");
+let errorClose = document.getElementById("form-error-close");
+
+let successAlert = document.getElementById("form-success");
+let successText = document.getElementById("form-success-text");
+let successClose = document.getElementById("form-success-close");
+
+successClose.addEventListener('click', (event) => {
+  successAlert.classList.toggle('d-none');
+});
+errorClose.addEventListener('click', (event) => {
+  console.log(event);
+  errorAlert.classList.toggle('d-none');
+});
+
 submitBtn.addEventListener("click", submit);
 
+let sending = false;
+
 function submit(){
+  submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i>`;
   event.preventDefault();
   let formData = {
     email: email.value,
@@ -18,22 +39,38 @@ function submit(){
   }
   console.log(formData);
   if(validateForm(formData)){
-    fetch('https://edutailors-backend-production.herokuapp.com/api', {
+    fetch('https://edutailors-backend-production.herokuapp.com/api', 
+    {
       method: 'POST',
-      body: JSON.stringify(formData),
+      body: formData,
       headers: {
         'Content-Type': 'application/json'
       }
     })
-      .then((response) => response.json())
+      .then((response) => {console.log(response); response.json()})
       .then((result) => {
-        alert('Email has been sent');
+        if (successAlert.classList.contains('d-none')) {
+          successAlert.classList.toggle('d-none');
+        }
+        successText.textContent = "Email has been sent";
       })
       .catch((error) => {
-        alert('Something went wrong, please try again later.');
+       if(errorAlert.classList.contains('d-none')){
+          errorAlert.classList.toggle('d-none');
+       }
+        errorText.textContent = "Something went wrong, please try again later.";
+      })
+      .finally(()=>{
+        submitBtn.innerHTML = `Submit`;
       });
   }
-  else alert('Form is invalid, please check the fields.');
+  else {
+    if (errorAlert.classList.contains('d-none')) {
+      errorAlert.classList.toggle('d-none');
+    }
+    errorText.textContent = "Form is invalid, please check the fields";
+    submitBtn.innerHTML = `Submit`;
+  }
 }
 
 function validateForm(formData){
@@ -50,5 +87,6 @@ function validateForm(formData){
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
+  })();
 
 </script>
