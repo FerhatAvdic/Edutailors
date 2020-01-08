@@ -10,7 +10,7 @@ academic institution during the Campaign Period.
 
 4. **HOW TO ENTER.** Follow these steps: 
 
-    - Click on the link in the Campaign email invitation or go to https://www.Edutailors.com/tailorlikeme and follow the instructions. 
+    - Click on the link in the Campaign email invitation and follow the instructions. 
     - Register for the Campaign by providing all required information. 
     - Take a selfie photograph and post it on your Instagram, Facebook and/or Twitter account with the hashtag #tailorlikeme (the "Entry" or "Entries"). 
     - Weekly winners will be drawn randomly and contacted through the contact address 
