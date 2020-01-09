@@ -37,18 +37,19 @@ function submit(){
     nameList: nameList.value,
     acceptTerms: acceptTerms.checked
   }
-  console.log(formData);
+  console.log(JSON.stringify(formData));
   if(validateForm(formData)){
-    fetch('https://edutailors-backend-production.herokuapp.com/api', 
+    fetch('https://edutailors-backend-production.herokuapp.com/api/subscribe/', 
     {
       method: 'POST',
-      body: formData,
+      body: JSON.stringify(formData),
       headers: {
         'Content-Type': 'application/json'
       }
     })
-      .then((response) => {console.log(response); response.json()})
+      .then((response) => response)
       .then((result) => {
+        console.log('result',result);
         if (successAlert.classList.contains('d-none')) {
           successAlert.classList.toggle('d-none');
         }
